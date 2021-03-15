@@ -58,6 +58,18 @@ flights = np.array([["                                      " \
 for i in range(len(flights_raw)): 
     for j in range(len(flights_raw[i][0].split(" "))-1):
         flights[i][j] = flights_raw[i][0].split(" ")[j]
+
+
+#####   Alt FLIGHTS FILE
+wb = load_workbook(dataset+"alt_flights.xlsx", data_only=True)
+ws = wb.active
+
+alt_flights_raw = np.array([[i.value for i in j] for j in ws ['A1':'A229']])
+alt_flights = np.array([["                                      " \
+           for i in range(len(alt_flights_raw[1][0].split(" ")) )] for j in range(len(alt_flights_raw))])
+for i in range(len(alt_flights_raw)):
+    for j in range(len(alt_flights_raw[i][0].split(" "))):
+        alt_flights[i][j] = alt_flights_raw[i][0].split(" ")[j]
         
 #####   ITINERARIES FILE
 wb = load_workbook(dataset+"itineraries.xlsx", data_only=True) 
