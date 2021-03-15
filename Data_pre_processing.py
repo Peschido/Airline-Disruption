@@ -13,6 +13,7 @@ aircraft = np.array([["                                      " \
 for i in range(len(aircraft_raw)): 
     for j in range(len(aircraft_raw[i][0].split(" "))):
         aircraft[i][j] = aircraft_raw[i][0].split(" ")[j]
+del aircraft_raw
     
 #####   AIRPORTS FILE
 wb = load_workbook(dataset+"airports.xlsx", data_only=True) 
@@ -24,7 +25,8 @@ airports = np.array([["                                      " \
 for i in range(len(airports_raw)): 
     for j in range(len(airports_raw[i][0].split(" "))-1):
         airports[i][j] = airports_raw[i][0].split(" ")[j]
-        
+del airports_raw
+
 #####   CONFIGURATION FILE
 wb = load_workbook(dataset+"config.xlsx", data_only=True) 
 ws = wb.active 
@@ -35,7 +37,8 @@ config = np.array([["                                      " \
 for i in range(len(config_raw)): 
     for j in range(len(config_raw[i][0].split(" "))-1):
         config[i][j] = config_raw[i][0].split(" ")[j]
-        
+del config_raw
+
 #####   DISTANCE FILE
 wb = load_workbook(dataset+"dist.xlsx", data_only=True) 
 ws = wb.active 
@@ -46,7 +49,7 @@ dist = np.array([["                                      " \
 for i in range(len(dist_raw)): 
     for j in range(len(dist_raw[i][0].split(" "))-1):
         dist[i][j] = dist_raw[i][0].split(" ")[j]
-    
+del dist_raw
         
 #####   FLIGHTS FILE
 wb = load_workbook(dataset+"flights.xlsx", data_only=True) 
@@ -58,7 +61,7 @@ flights = np.array([["                                      " \
 for i in range(len(flights_raw)): 
     for j in range(len(flights_raw[i][0].split(" "))-1):
         flights[i][j] = flights_raw[i][0].split(" ")[j]
-
+del flights_raw
 
 #####   Alt FLIGHTS FILE
 wb = load_workbook(dataset+"alt_flights.xlsx", data_only=True)
@@ -70,7 +73,8 @@ alt_flights = np.array([["                                      " \
 for i in range(len(alt_flights_raw)):
     for j in range(len(alt_flights_raw[i][0].split(" "))):
         alt_flights[i][j] = alt_flights_raw[i][0].split(" ")[j]
-        
+del alt_flights_raw
+
 #####   ITINERARIES FILE
 wb = load_workbook(dataset+"itineraries.xlsx", data_only=True) 
 ws = wb.active 
@@ -81,7 +85,8 @@ itineraries = np.array([["                                      " \
 for i in range(len(itineraries_raw)): 
     for j in range(len(itineraries_raw[i][0].split(" "))-1):
         itineraries[i][j] = itineraries_raw[i][0].split(" ")[j]
-        
+del itineraries_raw
+
 #####   POSITIONS FILE
 wb = load_workbook(dataset+"position.xlsx", data_only=True) 
 ws = wb.active 
@@ -92,7 +97,8 @@ position = np.array([["                                      " \
 for i in range(len(position_raw)): 
     for j in range(len(position_raw[i][0].split(" "))-1):
         position[i][j] = position_raw[i][0].split(" ")[j]
-        
+del position_raw
+
 #####   ROTATIONS FILE
 wb = load_workbook(dataset+"rotations.xlsx", data_only=True) 
 ws = wb.active 
@@ -103,3 +109,4 @@ rotations = np.array([["                                      " \
 for i in range(len(rotations_raw)): 
     for j in range(len(rotations_raw[i][0].split(" "))-1):
         rotations[i][j] = rotations_raw[i][0].split(" ")[j]
+del rotations_raw
